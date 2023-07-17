@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+:root {
+--Linear-gradient-active-input-border: hsl(249, 99%, 64%);
+--purple: hsl(278, 94%, 30%);
+--Red-input-errors: hsl(0, 100%, 66%);
+--White: hsl(0, 0%, 100%);
+--Light-grayish-violet: hsl(270, 3%, 87%);
+--Dark-grayish-violet: hsl(279, 6%, 55%);
+--Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+/* TODO: Start Style Container */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto 600px 1fr;
+    grid-template-areas: "main-desktop-img cards information-form";
+}
+
+@media screen and (max-width: 1385px) {
+    .container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+}
+/* TODO: End Style Container */
+
+/* TODO: Start Style Main Img */
+.container .main-desktop-img {
+    grid-area: main-desktop-img;
+}
+.container .main-desktop-img img {
+    width: 100%;
+    height: 100vh;
+}
+@media screen and (max-width: 1385px) {
+    .container .main-desktop-img {
+        width: 100%;
+    }
+    .container .main-desktop-img img {
+        object-fit: cover;
+        width: inherit;
+        height: 380px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .container .main-desktop-img img {
+        height: 240px;
+    }
+}
+/* TODO: End Style Main Img */
+
+/* TODO: Start Style Cards */
+.container .cards {
+    grid-area: cards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-106%, -50%);
+    width: inherit;
+    z-index: 1000;
+}
+.container .cards .card-front,
+.container .cards .card-back {
+    display: flex;
+    width: 100%;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+.container .cards .card-front img,
+.container .cards .card-back img{
+    box-shadow: 30px -30px 30px -30px rgba(99, 99, 99, 0.55);
+}
+.container .cards .card-front .card-content {
+    z-index: 2000;
+    position: absolute;
+    padding: 30px;
+    width: 447px;
+    height: 245px;
+}
+.container .cards .card-front .card-content img {
+    width: 84px;
+}
+.container .cards .card-front .card-content .card-information {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 17px;
+}
+.container .cards .card-front .card-content .card-information .card-number {
+    color: var(--White);
+    font-size: 34px;
+}
+.container .cards .card-front .card-content .card-information div {
+    width: 100%;
+    color: var(--White);
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .cards .card-back {
+    justify-content: end;
+}
+.container .cards .card-back .card-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 2000;
+    position: absolute;
+    width: 447px;
+    height: 245px;
+}
+.container .cards .card-back .card-content .cvc {
+    font-size: 20px;
+    color: var(--White);
+    position: absolute;
+    right: 50px;
+}
+@media screen and (max-width: 1385px) {
+    .container .cards {
+        grid-area: cards;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        transform: translate(0, 0);
+        width: inherit;
+        z-index: 1000;
+    }
+    .container .cards .card-front,
+    .container .cards .card-back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container .cards .card-front {
+        position: absolute;
+        top: 57%;
+        left: -10%;
+        z-index: 2000;
+    }
+    .container .cards .card-front img,
+    .container .cards .card-back img{
+        box-shadow: 0 0 0 0 white;
+    }
+}
+@media screen and (max-width: 600px) {
+    .container .main-desktop-img img {
+        height: 240px;
+    }
+    .container .cards .card-front img,
+    .container .cards .card-back img{
+        width: 300px;
+        box-shadow: 0 0 0 0 white;
+    }
+    .container .cards .card-front .card-content img {
+        width: 80px;
+    }
+    .container .cards .card-front .card-content,
+    .container .cards .card-back .card-content {
+        width: 300px;
+        height: 165px;
+    }
+    .container .cards .card-front .card-content .card-information {
+        padding-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 6px;
+    }
+    .container .cards .card-front .card-content .card-information .card-number {
+        font-size: 19px;
+    }
+}
+/* TODO: End Style Cards */
+
+/* TODO:  Start Style Form */
+.container .information-form {
+    grid-area: information-form;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 0;
+}
+.container .information-form form,
+.container .information-form .completed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    min-width: 513px;
+}
+.container .information-form form .input-field {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
+}
+.container .information-form form .input-field label {
+    color: var(--Very-dark-violet);
+    font-size: 15px;
+    padding-bottom: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.container .information-form form .input-field input {
+    width: 450px;
+    height: 59px;
+    padding-left:19px;
+    font-size: 22px;
+    color: var(--Very-dark-violet);
+    border: 1px solid var(--Light-grayish-violet);
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    outline: none;
+}
+.container .information-form form .input-field input:focus {
+    border: 1px solid var(--purple);
+
+}
+.container .information-form form .input-field input::placeholder {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: var(--Light-grayish-violet);
+}
+.container .information-form form .input-field .message {
+    display: none;
+    color: var(--Red-input-errors);
+    font-size: 14px;
+    padding-top: 4px;
+}
+.container .information-form form .exp-date-and-cvc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container .information-form form .input-field .inputs-exe {
+    margin-right: 10px;
+}
+.container .information-form form .input-field .inputs-exe input{
+    width: 100px;
+}
+.container .information-form form .exp-date-and-cvc .cvc input{
+    width: 238px;
+}
+.completed .continue-button {
+    padding: 20px 0 0 0;
+}
+.container .information-form form .input-field button,
+.completed .continue-button button {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+    width: 450px;
+    height: 58px;
+    border: none;
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+}
+.container .information-form form .input-field button:hover,
+.completed .continue-button button:hover {
+    cursor: pointer;
+}
+.container .information-form .completed {
+    display: none;
+    gap: 25px;
+}
+.container .information-form .completed h1 {
+    font-size: 38px;
+    font-weight: 500;
+    word-spacing: 10px;
+    text-transform: uppercase;
+}
+.container .information-form .completed p {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--Dark-grayish-violet);
+}
+@media screen and (max-width: 1385px) {
+    .container .information-form {
+        grid-area: information-form;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 0;
+        top: 60px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .container .information-form {
+        grid-area: information-form;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 0;
+        top: 60px;
+    }
+    .container .information-form form,
+    .container .information-form .completed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px;
+        min-width: 404px;
+    }
+    .container .information-form .completed {
+        display: none;
+    }
+    .container .information-form form .input-field .inputs-exe input{
+        width: 70px;
+    }
+    .container .information-form form .exp-date-and-cvc .cvc input{
+        width: 175px;
+    }
+    .container .information-form form .input-field input,
+    .container .information-form form .input-field button,
+    .completed .continue-button button {
+        width: 350px;
+    }
+}
+@media screen and (max-width: 404px) {
+    .container .information-form form,
+    .container .information-form .completed {
+        padding: 30px;
+        min-width: 355px;
+    }
+    .container .information-form form .input-field .inputs-exe input{
+        width: 75px;
+    }
+    .container .information-form form .exp-date-and-cvc .cvc input{
+        width: 122px;
+    }
+    .container .information-form form .input-field input,
+    .container .information-form form .input-field button,
+    .completed .continue-button button {
+        width: 290px;
+    }
+}
+/* TODO: End Style Form */

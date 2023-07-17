@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Interactive card details</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="main-desktop-img">
+      <img src="./images/bg-main-desktop.png" alt="Main Desktop Image">
+    </div>
+  
+    <div class="cards">
+      <div class="card-front">
+        <img class="card" src="./images/bg-card-front.png" alt="Card Front">
+        <div class="card-content">
+          <img src="./images/card-logo.svg" alt="Card Logo">
+          <div class="card-information">
+            <p id="inputs-text" class="card-number">0000 0000 0000 0000</p>
+            <div>
+              <p id="inputs-text" class="cardholder-name">Jane Appleseed</p>
+              <p class="exp-date">
+                <span id="inputs-text" class="month-year">00</span>/<span id="inputs-text" class="month-year">00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-back">
+        <img class="card" src="./images/bg-card-back.png" alt="Card Back">
+        <div class="card-content">
+          <p id="inputs-text" class="cvc">000</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="information-form">
+    
+      <form action="" method="post">
+        <div class="input-field">
+          <label for="cardholder-name-input">Cardholder Name</label>
+          <input class="inputs" type="text" id="cardholder-name-input" placeholder="e.g. Jane Appleseed">
+          <p class="message">can't be blank</p>
+        </div>
+
+        <div class="input-field">
+          <label for="card-number">Card Number</label>
+          <input class="inputs" type="text" id="card-number" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
+          <p class="message">can't be blank</p>
+        </div>
+
+        <div class="exp-date-and-cvc">
+          <div class="input-field exp">
+            <label for="exp-m">Exp. Date (MM/YY)</label>
+            <div class="inputs-exe">
+              <input class="inputs" id="exp-m" type="text" maxlength="2" placeholder="MM">
+              <input class="inputs" id="exp-y" type="text" maxlength="2" placeholder="YY">
+              <p class="message">can't be blank</p>
+            </div>
+          </div>
+          
+          <div class="input-field cvc">
+            <label for="cvc">CVC</label>
+            <input class="inputs" type="text" id="cvc" maxlength="3" placeholder="e.g. 123">
+            <p class="message">can't be blank</p>
+          </div>
+          
+        </div>
+        
+        <div class="input-field confirm-button">
+          <button>Confirm</button>
+        </div>
+      </form>
+
+      <div class="completed">
+          <img src="./images/icon-complete.svg" alt="">
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+          <div class="continue-button">
+            <button>Continue</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="./script.js"></script>
+</body>
+</html>
