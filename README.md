@@ -1,5 +1,20 @@
 <h1>Interactive Card Details</h1>
-<h2>This fun project will be an excellent way to practice DOM manipulation and form validation while also putting your HTML and CSS skills to the test.</h2>
+
+
+Hi everyone!
+
+I recently worked on an interactive card details project using HTML, CSS, and JavaScript with the DOM. The project involved creating a card that displays an image, title, description, and button. What makes this project special is that the content on the card changes dynamically when you type in an input field.
+
+To achieve this, I used JavaScript to add an event listener to the input field. When the user types in the input field, the content on the card changes dynamically using JavaScript to manipulate the DOM elements.
+
+Live Demo:
+https://mohamed-0-turki.github.io/Interactive_Card_Details/
+
+Here is a snippet of the code I used:
+https://github.com/Mohamed-0-Turki/Interactive_Card_Details
+
+Overall, this was a fun and challenging project that helped me to learn more about how HTML, CSS, and JavaScript work together to create engaging and interactive web experiences.
+
 <h3>Live Demo: https://mohamed-0-turki.github.io/Interactive_Card_Details/</h3>
 <h4>Project design</h3>
 <img src="./design/images/1.png">
